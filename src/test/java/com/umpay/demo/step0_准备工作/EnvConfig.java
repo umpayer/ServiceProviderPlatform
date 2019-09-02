@@ -22,8 +22,9 @@ public class EnvConfig {
 
     static{
         /** TODO 不依赖上下文调试时在此处赋值 */
-//        context.put("merId", "M2019082000000270");//商户号
-//        context.put("verifyCode", "123456");//挑战码
+        context.put("merId", "M2019082000000270");//商户号M2019082000000270
+
+        context.put("verifyCode", "098500");//挑战码
 
     }
 
