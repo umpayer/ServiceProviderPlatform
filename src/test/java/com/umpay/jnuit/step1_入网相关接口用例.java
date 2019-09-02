@@ -35,6 +35,7 @@ public class step1_入网相关接口用例 {
      * 1、2.1商户信息录入
      * 2、2.2资质上传接口
      * 3、2.6获取电子签约挑战码
+     * 4、2.7电子签约确认
      */
     private void callMerNetIn() throws Exception {
         //商户类型：1、小微；2、企业/个体配置
@@ -58,6 +59,9 @@ public class step1_入网相关接口用例 {
         //3、2.6获取电子签约挑战码
         new API_6_7电子签约().verifyCode_获取电子签约挑战码();
 
+        //TODO 查询签约挑战码
+        //4、2.7电子签约确认
+        new API_6_7电子签约().verifyCode_电子签约确认();
 
     }
 

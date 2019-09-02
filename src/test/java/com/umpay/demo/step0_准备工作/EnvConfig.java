@@ -14,6 +14,7 @@ public class EnvConfig {
 
     public static final String url = ConfigUtil.getConfig("umpayUrl");
     public static final String acqSpId = ConfigUtil.getConfig("acqSpId");
+    public static final String signMobileNo = ConfigUtil.getConfig("signMobileNo");
 
     public static final String filePath_资质 = ConfigUtil.getConfig("filePath");
 
@@ -22,6 +23,8 @@ public class EnvConfig {
     static{
         /** TODO 不依赖上下文调试时在此处赋值 */
 //        context.put("merId", "M2019082000000270");//商户号
+//        context.put("verifyCode", "123456");//挑战码
+
     }
 
     /**

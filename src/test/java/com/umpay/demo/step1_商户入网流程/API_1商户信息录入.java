@@ -71,7 +71,7 @@ public class API_1商户信息录入 {
 		reqPaper.put("openSubBank", "北京银行");//开户支行名称	64	Y
 		
 		reqPaper.put("webSite", "http://www.wang163.com");
-		reqPaper.put("signMobileNo", "13581756107");
+		reqPaper.put("signMobileNo", EnvConfig.signMobileNo);
 		reqPaper.put("signCertNo", "412701198707292019");
 		reqPaper.put("appName", "王贝贝的APP");
 		reqPaper.put("signName", "王贝贝");
@@ -167,7 +167,7 @@ public class API_1商户信息录入 {
 		reqPaper.put("openSubBank", "北京银行");//开户支行名称	64	Y
 		
 		reqPaper.put("webSite", "http://www.wang163.com");
-		reqPaper.put("signMobileNo", "13581756107");
+		reqPaper.put("signMobileNo", EnvConfig.signMobileNo);
 		reqPaper.put("signCertNo", "412701198707292019");
 		reqPaper.put("appName", "王贝贝的APP");
 		reqPaper.put("signName", "王贝贝");

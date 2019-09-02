@@ -19,6 +19,9 @@ public class API_6_7电子签约 {
 
 	/** 商户号，由商户信息录入成功后返回信息 */
 	private static String merId = (String) EnvConfig.context.get("merId");
+
+	/** 商户号，由发获取电子合约挑战码成功后下发到手机短信 */
+	private static String verifyCode = (String) EnvConfig.context.get("verifyCode");
 	/**
 	 * 
 	 * @Description: 获取电子合约挑战码
@@ -79,7 +82,7 @@ public class API_6_7电子签约 {
 		reqSign.put("acqSpId", EnvConfig.acqSpId);//服务商编号	10	M	服务商编号
 		reqSign.put("merId", merId);//报备编号	16	M	报备编号
 		reqSign.put("transCaId", "mfrmcvkd-hw0s-734h-lbk1-wyesecplro7t");//缓存事务ID
-		reqSign.put("verifyCode", "229186");//验证码
+		reqSign.put("verifyCode", verifyCode);//验证码
 		
 		//对请求报文做加签处理
 		String reqMerinfo = AddSign.addSign(reqSign);
