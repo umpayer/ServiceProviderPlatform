@@ -1,5 +1,8 @@
 package com.umpay.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.util.Properties;
 
@@ -12,15 +15,10 @@ import java.util.Properties;
  * @see        :                        
  * ************************************************/   
 public class ConfigUtil {
+	final static Logger logger = LoggerFactory.getLogger(ConfigUtil.class);
 	static private String configPath;
 
 	private static Properties props = null;
-
-	public static void main(String[] args) throws Exception {
-		String aaa = System.getProperty("user.dir");
-		String merchantType = (String) props.get("merchantType");
-		System.out.println(merchantType);
-	}
 
 	static {
 		loadConfig("/config/config.properties", "utf-8");

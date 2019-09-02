@@ -1,0 +1,38 @@
+{"test01":
+	{"acqSpId":"Y471790403 ", 
+	"merchantName":"小胖包子",
+	"paper": {"merchantType":"3",
+		"businessLicenseCode":"",
+		"businessLicenseName":"",
+		"businessLicenseExpired":"",
+		"industryCategoryId":"5411",
+		"businessAddress":"海淀区啊啊啊",
+		"province":"北京市",
+		"city":"北京市",
+		"area":"",
+		"lawyerName":"",
+		"lawyerCertType":"",
+		"lawyerCertNo":"",
+		"contactPerson":"张三",
+		"contactPhone":"13811112222",
+		"serviceTel":"010-12345678",
+		"email":"ww@163.com",
+		"settleAccountType":"2",
+		"settleAccountNo":"6212260200051558001",
+		"settleAccount":"吕倩",
+		"settlePeriod":"1",
+		"settleIdNo":"513436200008027310",
+		"openBank":"中国银行",
+		"openSubBank":"中国银行支行"
+	},
+	"rate":{
+		"feeRateAlipay" : "0.0022",
+		"feeRateWechatpay" : "0.0022",
+		"bankCardRateLevel1" : {"feeRateUnionpayDebit":"0.0025","feeRateUnionpayDebitCap":"30","feeRateUnionpayCredit":"0.0025"},
+		"bankCardRateLevel2":{"feeRateUnionpayDebit":"0.0022","feeRateUnionpayDebitCap":"30","feeRateUnionpayCredit":"0.0022"},
+		"feeRateD0"	:"0.0022",
+		"feeRateWithdraw":"1000"
+	},	
+	"wechatChannelId":"24006513",
+	"alipayChannelId":"2088501624560335"}
+}
