@@ -1,21 +1,18 @@
 package com.umpay.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.*;
+import java.net.URL;
 import java.util.Properties;
 
 
 /** ******************  类说明  *********************
  * class       :  ConfigUtil
  * @author     :  LiuJiLong
- * @version    :  1.0  
+ * @version    :  1.0
  * description :  配置工具类
- * @see        :                        
- * ************************************************/   
+ * @see        :
+ * ************************************************/
 public class ConfigUtil {
-	final static Logger logger = LoggerFactory.getLogger(ConfigUtil.class);
 	static private String configPath;
 
 	private static Properties props = null;
@@ -33,7 +30,9 @@ public class ConfigUtil {
 	
 	public static void loadConfig(String configPath,String charSet){
 		try {
-			props = new Properties();
+			if (props == null) {
+				props = new Properties();
+			}
 			File classpathRoot = new File(System.getProperty("user.dir"));
 			File dir = new File(classpathRoot,"");//项目所在根目录
 			String prefix = dir.getAbsolutePath() + configPath;

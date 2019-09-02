@@ -22,7 +22,7 @@ import java.util.TreeMap;
 
 public class API_1商户信息录入 {
 	private static final Logger log = LoggerFactory.getLogger(API_1商户信息录入.class);
-	private static final String PATH ="merchants/apply";
+	private static final String PATH = EnvConfig.url + "merchants/apply";
 
 	@SuppressWarnings("unchecked")
 	@Test
@@ -35,7 +35,7 @@ public class API_1商户信息录入 {
 		TreeMap<String, Object> reqbankCardRateLevel2 = new TreeMap<String, Object>();
 
 		//微信：208493420 支付宝：270729587
-		reqMer.put("acqSpId", "Y471790403");//服务商编号	10	M	服务商编号(联动平台分配)Y471790403有D0
+		reqMer.put("acqSpId", EnvConfig.acqSpId);//服务商编号	10	M	服务商编号(联动平台分配)Y471790403有D0
 		reqMer.put("merchantName", "自然人测试商户2");//商户简称	16	M	商户交易显示名称 
 		reqMer.put("paper", reqPaper);//商户详细信息		M	json 格式字符串
 		reqMer.put("rate", reqRate);//手续费费率		M	json 格式字符串
@@ -100,7 +100,7 @@ public class API_1商户信息录入 {
 
 		try{
 			//发送post请求
-			String result = HttpUtilClient.doPostJson(EnvConfig.url+PATH, new JSONObject(), reqMap);
+			String result = HttpUtilClient.doPostJson(PATH, new JSONObject(), reqMap);
 			System.out.println("输出请求结果:"+ result.toString());
 			Map resMap = new Gson().fromJson(result, Map.class);
 			String respCode = (String) resMap.get("respCode");
@@ -112,7 +112,7 @@ public class API_1商户信息录入 {
 			}else{
 				//开户失败
 				String respMsg = (String) resMap.get("respMsg");
-				Assert.assertTrue(respMsg, false);
+				Assert.assertTrue("小微商户入网开户失败：" + respMsg, false);
 			}
 		}catch (Exception e) {
 			Assert.assertTrue("小微商户入网开户异常", false);
@@ -130,7 +130,7 @@ public class API_1商户信息录入 {
 		TreeMap<String, Object> reqbankCardRateLevel2 = new TreeMap<String, Object>();
 
 		//微信：208493420 支付宝：270729587
-		reqMer.put("acqSpId", "Y471790403");//服务商编号	10	M	服务商编号(联动平台分配)Y471790403有D0
+		reqMer.put("acqSpId", EnvConfig.acqSpId);//服务商编号	10	M	服务商编号(联动平台分配)Y471790403有D0
 		reqMer.put("merchantName", "企业renjie测试商户3");//商户简称	16	M	商户交易显示名称 
 		reqMer.put("paper", reqPaper);//商户详细信息		M	json 格式字符串
 		reqMer.put("rate", reqRate);//手续费费率		M	json 格式字符串
@@ -198,7 +198,7 @@ public class API_1商户信息录入 {
 
 		try{
 			//发送post请求
-			String result = HttpUtilClient.doPostJson(EnvConfig.url+PATH, new JSONObject(), reqMap);
+			String result = HttpUtilClient.doPostJson(PATH, new JSONObject(), reqMap);
 			System.out.println("输出请求结果:"+ result.toString());
 			Map resMap = new Gson().fromJson(result, Map.class);
 			String respCode = (String) resMap.get("respCode");
@@ -206,14 +206,14 @@ public class API_1商户信息录入 {
 				String merId = (String) resMap.get("merId");
 				EnvConfig.context.put("merId", merId);
 				//开户成功
-				Assert.assertTrue("小微商户入网开户成功", true);
+				Assert.assertTrue("企业个体商户入网开户成功", true);
 			}else{
 				//开户失败
 				String respMsg = (String) resMap.get("respMsg");
-				Assert.assertTrue(respMsg, false);
+				Assert.assertTrue("企业个体商户入网开户失败：" + respMsg, false);
 			}
 		}catch (Exception e) {
-			Assert.assertTrue("小微商户入网开户异常", false);
+			Assert.assertTrue("企业个体商户入网开户异常", false);
 		}
 	}
 	

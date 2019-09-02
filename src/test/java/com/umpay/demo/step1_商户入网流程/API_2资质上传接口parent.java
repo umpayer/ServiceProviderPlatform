@@ -21,6 +21,8 @@ import java.util.Map;
  */
 public class API_2资质上传接口parent{
 
+	private String filePath_资质 = EnvConfig.filePath_资质;
+
 	/**
 	 * @param paramMap 
 	 * @throws Exception 
@@ -28,7 +30,7 @@ public class API_2资质上传接口parent{
 	 * @date 2019年8月14日 下午12:57:18
 	 */
 	public void test_idCardFront(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//idCardFront.jpg";
+		String filePath = filePath_资质 + "//idCardFront.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "idCardFront");
 		paramMap.put("imageName", "idCard_front.jpg");
@@ -44,13 +46,13 @@ public class API_2资质上传接口parent{
 	 * @date 2019年8月14日 下午1:00:11
 	 */
 	public void test_idCardBack(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//idCardBack.jpg";
+		String filePath = filePath_资质 + "//idCardBack.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "idCardBack");
 		paramMap.put("imageName", "idCard_back.jpg");
 		String resCode = sendData("身份证背面上传",filePath,"/upload/qualification",paramMap);
 		if (!"00".equals(resCode)) {
-			throw new Exception("身份证正面上传失败，流程中止！");
+			throw new Exception("身份证背面上传失败，流程中止！");
 		}
 	}
 	/**
@@ -61,7 +63,7 @@ public class API_2资质上传接口parent{
 	 */
 	
 	public void test_idCardHandle(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//idCardHandle.jpg";
+		String filePath = filePath_资质 + "//idCardHandle.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "idCardHandle");
 		paramMap.put("imageName", "idCardHandle.jpg");
@@ -78,7 +80,7 @@ public class API_2资质上传接口parent{
 	 */
 	
 	public void test_bankCardPhotoFront(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//bankCardPhotoFront.jpg";
+		String filePath = filePath_资质 + "//bankCardPhotoFront.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "bankCardPhotoFront");
 		paramMap.put("imageName", "bankCardPhotoFront.jpg");
@@ -95,7 +97,7 @@ public class API_2资质上传接口parent{
 	 */
 	
 	public void test_bankCardPhotoBack(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//bankCardPhotoBack.jpg";
+		String filePath = filePath_资质 + "//bankCardPhotoBack.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "bankCardPhotoBack");
 		paramMap.put("imageName", "bankCardPhotoBack.jpg");
@@ -112,7 +114,7 @@ public class API_2资质上传接口parent{
 	 */
 	
 	public void test_openingLicenseAccountPhoto(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//openingLicenseAccountPhoto.jpg";
+		String filePath = filePath_资质 + "//openingLicenseAccountPhoto.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "openingLicenseAccountPhoto");
 		paramMap.put("imageName", "openingLicenseAccountPhoto.jpg");
@@ -129,7 +131,7 @@ public class API_2资质上传接口parent{
 	 */
 	
 	public void test_acquiringAgreementPhoto(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//acquiringAgreementPhoto.jpg";
+		String filePath = filePath_资质 + "//acquiringAgreementPhoto.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "acquiringAgreementPhoto");
 		paramMap.put("imageName", "acquiringAgreementPhoto.jpg");
@@ -146,7 +148,7 @@ public class API_2资质上传接口parent{
 	 */
 	
 	public void test_signAuthLetterPhoto(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//signAuthLetterPhoto.jpg";
+		String filePath = filePath_资质 + "//signAuthLetterPhoto.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "signAuthLetterPhoto");
 		paramMap.put("imageName", "signAuthLetterPhoto.jpg");
@@ -163,7 +165,7 @@ public class API_2资质上传接口parent{
 	 */
 	
 	public void test_businessLicensePhoto(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//businessLicensePhoto.jpg";
+		String filePath = filePath_资质 + "//businessLicensePhoto.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "businessLicensePhoto");
 		paramMap.put("imageName", "businessLicensePhoto.jpg");
@@ -180,7 +182,7 @@ public class API_2资质上传接口parent{
 	 */
 	
 	public void test_storeHeadPhoto(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//storeHeadPhoto.jpg";
+		String filePath = filePath_资质 + "//storeHeadPhoto.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "storeHeadPhoto");
 		paramMap.put("imageName", "storeHeadPhoto.jpg");
@@ -197,7 +199,7 @@ public class API_2资质上传接口parent{
 	 */
 	
 	public void test_storeShopPhoto(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//storeShopPhoto.jpg";
+		String filePath = filePath_资质 + "//storeShopPhoto.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "storeShopPhoto");
 		paramMap.put("imageName", "storeShopPhoto.jpg");
@@ -214,7 +216,7 @@ public class API_2资质上传接口parent{
 	 */
 	
 	public void test_storeHallPhoto(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//storeHallPhoto.jpg";
+		String filePath = filePath_资质 + "//storeHallPhoto.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "storeHallPhoto");
 		paramMap.put("imageName", "storeHallPhoto.jpg");
@@ -231,7 +233,7 @@ public class API_2资质上传接口parent{
 	 */
 	
 	public void test_storeCashierPhoto(Map<String, Object> paramMap) throws Exception {
-		String filePath = "D://test//storeCashierPhoto.jpg";
+		String filePath = filePath_资质 + "//storeCashierPhoto.jpg";
 		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "storeCashierPhoto");
 		paramMap.put("imageName", "storeCashierPhoto.jpg");
