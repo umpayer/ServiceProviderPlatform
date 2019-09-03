@@ -115,6 +115,7 @@ public class API_1商户信息录入 {
 				Assert.assertTrue("小微商户入网开户失败：" + respMsg, false);
 			}
 		}catch (Exception e) {
+			e.printStackTrace();
 			Assert.assertTrue("小微商户入网开户异常", false);
 		}
 	}

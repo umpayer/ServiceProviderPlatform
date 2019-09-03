@@ -49,8 +49,10 @@ public class API_6_7电子签约 extends BaseAPI {
 			String respCode = (String) resMap.get("respCode");
 			if ("00".equals(respCode)) {
 				String merId = (String) resMap.get("merId");
-				EnvConfig.context.put("merId", merId);
+//				EnvConfig.context.put("merId", merId);
+				EnvConfig.context.put("transCaId", (String) resMap.get("transCaId"));
 				Assert.assertTrue("获取电子合约挑战码成功", true);
+				
 			}else{
 				String respMsg = (String) resMap.get("respMsg");
 				Assert.assertTrue("获取电子合约挑战码失败：" + respMsg, false);
@@ -75,8 +77,8 @@ public class API_6_7电子签约 extends BaseAPI {
 
 		reqSign.put("acqSpId", EnvConfig.acqSpId);//服务商编号	10	M	服务商编号
 		reqSign.put("merId", merId);//报备编号	16	M	报备编号
-		reqSign.put("transCaId", "mfrmcvkd-hw0s-734h-lbk1-wyesecplro7t");//缓存事务ID
-		reqSign.put("verifyCode", verifyCode);//验证码
+		reqSign.put("transCaId", (String) EnvConfig.context.get("transCaId"));//缓存事务ID
+		reqSign.put("verifyCode", (String) EnvConfig.context.get("VERIFYCODE"));//验证码
 		
 		//对请求报文做加签处理
 		String reqMerinfo = AddSign.addSign(reqSign);
@@ -91,7 +93,7 @@ public class API_6_7电子签约 extends BaseAPI {
 			String respCode = (String) resMap.get("respCode");
 			if ("00".equals(respCode)) {
 				String merId = (String) resMap.get("merId");
-				EnvConfig.context.put("merId", merId);
+//				EnvConfig.context.put("merId", merId);
 				//开户成功
 				Assert.assertTrue("电子签约确认成功", true);
 			}else{

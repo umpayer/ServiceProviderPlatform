@@ -1,5 +1,8 @@
 package com.umpay.jnuit;
 
+import org.junit.Test;
+
+import com.umpay.call.API_6_8获取签约验证码;
 import com.umpay.call.AuditMer;
 import com.umpay.demo.step0_准备工作.EnvConfig;
 import com.umpay.demo.step1_商户入网流程.API_1商户信息录入;
@@ -10,7 +13,6 @@ import com.umpay.demo.step2_入网成功配置参数.API_4微信参数配置_支
 import com.umpay.demo.step2_入网成功配置参数.API_5微信参数配置_子商户appid;
 import com.umpay.demo.step2_入网成功配置参数.API_8电子协议下载;
 import com.umpay.util.ConfigUtil;
-import org.junit.Test;
 
 /**
  * 入网整体流程测试用例执行
@@ -51,10 +53,10 @@ public class step1_入网相关接口用例 {
      * 5、模拟调用商户审核接口
      */
     private void callMerNetIn() throws Exception {
-        //商户类型：1、小微；2、企业/个体配置
+        //商户类型：3、小微；1/2、企业/个体配置
         String merchantType = ConfigUtil.getConfig("merchantType");
 
-        if ("1".equals(merchantType)) {//小微
+        if ("3".equals(merchantType)) {//小微
             //1、2.1商户信息录入
             new API_1商户信息录入().add_小微商户入网();
 
@@ -69,12 +71,17 @@ public class step1_入网相关接口用例 {
             new API_2资质上传接口().test_个体_企业商户();
 
         }
+        Thread.sleep(1000);
         //3、2.6获取电子签约挑战码
         new API_6_7电子签约().verifyCode_获取电子签约挑战码();
 
         //TODO 查询签约挑战码
+        new API_6_8获取签约验证码().verifyCode_获取电子签约挑战码FOR_DB();
+        
         //4、2.7电子签约确认
         new API_6_7电子签约().verifyCode_电子签约确认();
+        
+        new API_3商户信息查询().queryOrder_商户信息查询();
     }
 
     /**
