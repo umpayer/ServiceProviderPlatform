@@ -31,7 +31,7 @@ public class API_4微信参数配置_支付授权目录 extends BaseAPI {
 	public void config_支付授权目录() throws UnsupportedEncodingException, GeneralSecurityException, IOException{
 		TreeMap<String, Object> reqPay = new TreeMap<String, Object>();
 		reqPay.put("acqSpId", EnvConfig.acqSpId);//代理商编号	10	M	代理商编号(联动平台分配)
-		reqPay.put("acqMerId", merId);//商户编号	8	C	merId和acqMerId至少存在一个
+		reqPay.put("acqMerId", acqMerId);//商户编号	8	C	merId和acqMerId至少存在一个
 		reqPay.put("jsapiPath", "");//支付授权目录
 		reqPay.put("signature", "");	
 

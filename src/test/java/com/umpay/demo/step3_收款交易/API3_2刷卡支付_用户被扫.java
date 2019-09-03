@@ -38,11 +38,11 @@ public class API3_2刷卡支付_用户被扫 extends BaseAPI {
 		reqPay.put("orderNo", orderNo);//商户订单号	64	M	商户的支付订单号
 		reqPay.put("txnAmt", "1");//交易金额	13	M	是人民币，且以分为单位
 		reqPay.put("orderType", "alipay");//订单类型	12	M alipay-支付宝,wechat-微信支付 ,unionpay-银联二维码
-		reqPay.put("goodsInfo", "aaa");//商品信息	128	O	可上送商品描述、商户订单号等信息，用户付款成功后会在微信账单页面展示
-		reqPay.put("authCode", "284979573206911019");//付款码	32	M	05:微信刷卡：以10~15开头的长度18位的数字,06:支付宝条码：以25~30开头的长度为16~24位的数字,09:银联二维码：以62开头长度19位数字
+//		reqPay.put("goodsInfo", "aaa");//商品信息	128	O	可上送商品描述、商户订单号等信息，用户付款成功后会在微信账单页面展示
+		reqPay.put("authCode", "284455403782969602");//付款码	32	M	05:微信刷卡：以10~15开头的长度18位的数字,06:支付宝条码：以25~30开头的长度为16~24位的数字,09:银联二维码：以62开头长度19位数字
 		reqPay.put("goodsId", "123");//商品ID	16	M	商品ID
 		reqPay.put("signature", "");
-		
+
 		String reqpay = AddSign.addSign(reqPay);
 		JSONObject jsonObject1 =JSONObject.parseObject(reqpay);
 

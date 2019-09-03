@@ -7,6 +7,7 @@ com\umpay\demo\step0_准备工作\EnvConfig.class
 com\umpay\demo\step5_交易撤销_退费\API3_6订单退费.class
 com\umpay\demo\step2_入网成功配置参数\API_3商户信息查询.class
 com\umpay\demo\step5_交易撤销_退费\API3_5订单撤销.class
+com\umpay\call\VerifyCode.class
 com\umpay\jnuit\step1_入网相关接口用例.class
 com\umpay\call\BaseAPI.class
 com\umpay\demo\step1_商户入网流程\API_6_7电子签约.class

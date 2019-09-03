@@ -3,11 +3,13 @@ D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\CertUt
 D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\AnnotationUtil.java
 D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\Base64.java
 D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\ConfigUtil.java
+D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\db\OnTestUmssfrnaDBConnect.java
 D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\StartTraceApplication.java
 D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\AddSign.java
 D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\TestDataProvider.java
 D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\TimeUtil.java
 D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\Const.java
+D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\db\OnTestUcainfoaDBConnect.java
 D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\StringUtil.java
 D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\Common.java
 D:\workspace-offline\ServiceProviderPlatform\src\main\java\com\umpay\util\HttpUtilClient.java

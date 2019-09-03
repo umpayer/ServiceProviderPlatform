@@ -19,13 +19,13 @@ import com.umpay.util.HttpUtilClient;
 public class AuditMer {
 
     public String queryUrl ="http://10.10.178.87:7807/joinflow/JoinFlow";
-    private static String merId = (String) EnvConfig.context.get("merId");
+    private static String acqMerId = (String) EnvConfig.context.get("acqMerId");
 
     @SuppressWarnings("unchecked")
     @Test
     public void auditMer() throws Exception{
         TreeMap<String, Object> reqPay = new TreeMap<String, Object>();
-        reqPay.put("acqMerId", merId);
+        reqPay.put("acqMerId", acqMerId);
         reqPay.put("acqSpId", EnvConfig.acqSpId);
         reqPay.put("funCode", "ALIVE");
 
@@ -48,9 +48,7 @@ public class AuditMer {
             //将响应报文转成map
             Map<String, Object> resMap = JSON.parseObject(result, TreeMap.class);
             String respCode = (String) resMap.get("respCode");
-            if ("00".equals(respCode)) {
-                String merId = (String) resMap.get("merId");
-                EnvConfig.context.put("merId", merId);
+            if ("0000".equals(respCode)) {
                 //开户成功
                 Assert.assertTrue("审核商户开户成功", true);
             }else{

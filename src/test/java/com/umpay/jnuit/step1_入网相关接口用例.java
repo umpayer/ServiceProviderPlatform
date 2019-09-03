@@ -1,8 +1,8 @@
 package com.umpay.jnuit;
 
+import com.umpay.call.VerifyCode;
 import org.junit.Test;
 
-import com.umpay.call.API_6_8获取签约验证码;
 import com.umpay.call.AuditMer;
 import com.umpay.demo.step0_准备工作.EnvConfig;
 import com.umpay.demo.step1_商户入网流程.API_1商户信息录入;
@@ -38,6 +38,7 @@ public class step1_入网相关接口用例 {
 
         //2.1、入网成功调用商户审核流程
         //TODO 联系联动审核该入网商户
+        new API_3商户信息查询().queryOrder_商户信息查询();
         new AuditMer().auditMer();
 
         //3、调用入网成功配置参数
@@ -76,12 +77,10 @@ public class step1_入网相关接口用例 {
         new API_6_7电子签约().verifyCode_获取电子签约挑战码();
 
         //TODO 查询签约挑战码
-        new API_6_8获取签约验证码().verifyCode_获取电子签约挑战码FOR_DB();
+        new VerifyCode().getVerifyCode();
         
         //4、2.7电子签约确认
         new API_6_7电子签约().verifyCode_电子签约确认();
-        
-        new API_3商户信息查询().queryOrder_商户信息查询();
     }
 
     /**
@@ -96,13 +95,15 @@ public class step1_入网相关接口用例 {
         new API_3商户信息查询().queryOrder_商户信息查询();
 
         //2、2.4微信参数配置-支付授权目录
-        new API_4微信参数配置_支付授权目录().config_支付授权目录();
+//        new API_4微信参数配置_支付授权目录().config_支付授权目录();
 
         //3、2.5微信参数配置-子商户appid
-        new API_5微信参数配置_子商户appid().config_子商户appid();
+//        new API_5微信参数配置_子商户appid().config_子商户appid();
 
         //4、2.8电子协议下载
         new API_8电子协议下载().down_电子协议下载();
+
+        System.out.println("success=========================================================");
     }
 
 }
