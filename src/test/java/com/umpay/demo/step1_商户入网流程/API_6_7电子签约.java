@@ -2,6 +2,7 @@ package com.umpay.demo.step1_商户入网流程;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.umpay.call.BaseAPI;
 import com.umpay.demo.step0_准备工作.EnvConfig;
 import com.umpay.util.AddSign;
 import com.umpay.util.HttpUtilClient;
@@ -13,15 +14,10 @@ import org.slf4j.LoggerFactory;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class API_6_7电子签约 {
+public class API_6_7电子签约 extends BaseAPI {
 
 	String url = EnvConfig.url;
 
-	/** 商户号，由商户信息录入成功后返回信息 */
-	private static String merId = (String) EnvConfig.context.get("merId");
-
-	/** 商户号，由发获取电子合约挑战码成功后下发到手机短信 */
-	private static String verifyCode = (String) EnvConfig.context.get("verifyCode");
 	/**
 	 * 
 	 * @Description: 获取电子合约挑战码
@@ -54,10 +50,8 @@ public class API_6_7电子签约 {
 			if ("00".equals(respCode)) {
 				String merId = (String) resMap.get("merId");
 				EnvConfig.context.put("merId", merId);
-				//开户成功
 				Assert.assertTrue("获取电子合约挑战码成功", true);
 			}else{
-				//开户失败
 				String respMsg = (String) resMap.get("respMsg");
 				Assert.assertTrue("获取电子合约挑战码失败：" + respMsg, false);
 			}

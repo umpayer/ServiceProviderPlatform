@@ -2,6 +2,7 @@ package com.umpay.demo.step2_入网成功配置参数;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.umpay.call.BaseAPI;
 import com.umpay.demo.step0_准备工作.EnvConfig;
 import com.umpay.util.AddSign;
 import com.umpay.util.Common;
@@ -13,17 +14,17 @@ import java.util.TreeMap;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static com.umpay.call.BaseAPI.merId;
+
 /**
  * @author: weijieming
  * @date:2019年8月21日 上午10:37:51
  * @类说明:查询电子协议接口
  * @产品号:
  */
-public class API_8电子协议下载 {
+public class API_8电子协议下载 extends BaseAPI {
 
     private String queryUrl = EnvConfig.url + "merchants/queryElectronicAgreement";
-    /** 商户号，由商户信息录入成功后返回信息 */
-    private static String merId = (String) EnvConfig.context.get("merId");
 
     @Test
     public void down_电子协议下载() throws Exception{
@@ -45,12 +46,8 @@ public class API_8电子协议下载 {
             Map<String, Object> resMap = JSON.parseObject(result, TreeMap.class);
             String respCode = (String) resMap.get("respCode");
             if ("00".equals(respCode)) {
-                String merId = (String) resMap.get("merId");
-                EnvConfig.context.put("merId", merId);
-                //开户成功
                 Assert.assertTrue("电子协议下载成功", true);
             }else{
-                //开户失败
                 String respMsg = (String) resMap.get("respMsg");
                 Assert.assertTrue("电子协议下载失败：" + respMsg, false);
             }

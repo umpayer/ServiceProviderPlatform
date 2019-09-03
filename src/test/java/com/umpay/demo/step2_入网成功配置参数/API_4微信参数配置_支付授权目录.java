@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import com.alibaba.fastjson.JSON;
+import com.umpay.call.BaseAPI;
 import com.umpay.demo.step0_准备工作.EnvConfig;
 import com.umpay.util.HttpUtilClient;
 import org.junit.Assert;
@@ -23,10 +24,8 @@ import com.umpay.util.Common;
  * @类说明:
  * @产品号:
  */
-public class API_4微信参数配置_支付授权目录 {
+public class API_4微信参数配置_支付授权目录 extends BaseAPI {
 	private String payUrl = EnvConfig.url + "merchants/jsApiPath";
-	/** 商户号，由商户信息录入成功后返回信息 */
-	private static String merId = (String) EnvConfig.context.get("merId");
 
 	@Test
 	public void config_支付授权目录() throws UnsupportedEncodingException, GeneralSecurityException, IOException{
@@ -48,12 +47,8 @@ public class API_4微信参数配置_支付授权目录 {
 			Map<String, Object> resMap = JSON.parseObject(result, TreeMap.class);
 			String respCode = (String) resMap.get("respCode");
 			if ("00".equals(respCode)) {
-				String merId = (String) resMap.get("merId");
-				EnvConfig.context.put("merId", merId);
-				//开户成功
 				Assert.assertTrue("微信参数配置_支付授权目录成功", true);
 			}else{
-				//开户失败
 				String respMsg = (String) resMap.get("respMsg");
 				Assert.assertTrue("微信参数配置_支付授权目录失败：" + respMsg, false);
 			}

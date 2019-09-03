@@ -1,6 +1,7 @@
 package com.umpay.demo.step1_商户入网流程;
 
 import com.alibaba.fastjson.JSON;
+import com.umpay.call.BaseAPI;
 import com.umpay.demo.step0_准备工作.EnvConfig;
 import com.umpay.util.HttpUtilClient;
 import com.umpay.util.StringUtil;
@@ -19,7 +20,7 @@ import java.util.Map;
  * @author Zengfu Jiang
  * @date 2019年8月7日 下午6:05:34
  */
-public class API_2资质上传接口parent{
+public class API_2资质上传接口parent extends BaseAPI {
 
 	private String filePath_资质 = EnvConfig.filePath_资质;
 

@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import com.alibaba.fastjson.JSON;
+import com.umpay.call.BaseAPI;
 import com.umpay.demo.step0_准备工作.EnvConfig;
 import org.junit.Assert;
 import org.testng.annotations.Test;
@@ -18,11 +19,9 @@ import com.umpay.util.HttpUtilClient;
  * @类说明:商户查询接口
  * @产品号:
  */
-public class API_3商户信息查询 {
+public class API_3商户信息查询 extends BaseAPI {
 	private String queryUrl = EnvConfig.url + "merchants/queryMerchantInfo";
-	/** 商户号，由商户信息录入成功后返回信息 */
-	private static String merId = (String) EnvConfig.context.get("merId");
-	
+
 	@SuppressWarnings("unchecked")
 	@Test
 	public void queryOrder_商户信息查询() throws Exception{
@@ -44,12 +43,10 @@ public class API_3商户信息查询 {
 			Map<String, Object> resMap = JSON.parseObject(result, TreeMap.class);
 			String respCode = (String) resMap.get("respCode");
 			if ("00".equals(respCode)) {
-				String merId = (String) resMap.get("merId");
-				EnvConfig.context.put("merId", merId);
-				//开户成功
+				String acqMerId = (String) resMap.get("acqMerId");
+				EnvConfig.context.put("acqMerId", acqMerId);
 				Assert.assertTrue("商户信息查询成功", true);
 			}else{
-				//开户失败
 				String respMsg = (String) resMap.get("respMsg");
 				Assert.assertTrue("商户信息查询失败：" + respMsg, false);
 			}

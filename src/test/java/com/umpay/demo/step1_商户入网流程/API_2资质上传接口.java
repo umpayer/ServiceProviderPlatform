@@ -9,9 +9,6 @@ import java.util.Map;
 
 public class API_2资质上传接口 extends API_2资质上传接口parent {
 
-	/** 商户号，由商户信息录入成功后返回信息 */
-	private static String merId = (String) EnvConfig.context.get("merId");
-
 	public static void main(String[] args) throws Exception {
 		API_2资质上传接口 group = new API_2资质上传接口();
 		//小微
