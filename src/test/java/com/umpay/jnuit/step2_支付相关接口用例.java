@@ -45,7 +45,7 @@ public class step2_支付相关接口用例 {
         new API3_8订单关闭().orderClose_商户订单关闭请求();
 
         //5、调用对账文件下载
-        
+
     }
 
     /**

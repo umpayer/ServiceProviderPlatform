@@ -1,12 +1,12 @@
 com\umpay\demo\step2_入网成功配置参数\API_5微信参数配置_子商户appid.class
 com\umpay\demo\step4_交易查询\API3_4订单状态同步.class
+com\umpay\demo\step6_交易关闭\API3_8订单关闭.class
 com\umpay\demo\step1_商户入网流程\API_2资质上传接口.class
 com\umpay\demo\step1_商户入网流程\API_1商户信息录入.class
 com\umpay\demo\step0_准备工作\EnvConfig.class
 com\umpay\demo\step5_交易撤销_退费\API3_6订单退费.class
 com\umpay\demo\step2_入网成功配置参数\API_3商户信息查询.class
 com\umpay\demo\step5_交易撤销_退费\API3_5订单撤销.class
-com\umpay\demo\step6_交易关闭\OrderCloseAPI.class
 com\umpay\jnuit\step1_入网相关接口用例.class
 com\umpay\call\BaseAPI.class
 com\umpay\demo\step1_商户入网流程\API_6_7电子签约.class
@@ -18,4 +18,5 @@ com\umpay\demo\step2_入网成功配置参数\API_4微信参数配置_支付授�
 com\umpay\demo\step3_收款交易\API3_1公众号小程序支付.class
 com\umpay\demo\step5_交易撤销_退费\API3_7订单退费查询.class
 com\umpay\demo\step2_入网成功配置参数\API_8电子协议下载.class
+com\umpay\demo\step7_对账文件下载\API4_2对账文件下载.class
 com\umpay\demo\step3_收款交易\API3_3扫码支付_用户主扫.class
