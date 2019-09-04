@@ -3,6 +3,7 @@ com\umpay\demo\step4_交易查询\API3_4订单状态同步.class
 com\umpay\demo\step6_交易关闭\API3_8订单关闭.class
 com\umpay\demo\step1_商户入网流程\API_2资质上传接口.class
 com\umpay\demo\step1_商户入网流程\API_1商户信息录入.class
+com\umpay\call\WebCallDemo.class
 com\umpay\demo\step0_准备工作\EnvConfig.class
 com\umpay\demo\step5_交易撤销_退费\API3_6订单退费.class
 com\umpay\demo\step2_入网成功配置参数\API_3商户信息查询.class
