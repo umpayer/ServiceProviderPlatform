@@ -22,11 +22,11 @@ public class EnvConfig {
 
     static{
         /** TODO 不依赖上下文调试时在此处赋值 */
-        context.put("merId", "M2019082000000270");//报备编号M2019082000000270
+        context.put("merId", "M2019090400000478");//报备编号M2019082000000270
         context.put("verifyCode", "098500");//挑战码
         context.put("acqMerId", "42516662");//商户号
-        context.put("orderNo", "JD201909030945440001");//订单号
-        context.put("refundOrderNo", "JD201909030945440001");//退费订单号
+//        context.put("orderNo", "JD201909030945440001");//订单号
+//        context.put("refundOrderNo", "JD201909030945440001");//退费订单号
     }
 
     /**
