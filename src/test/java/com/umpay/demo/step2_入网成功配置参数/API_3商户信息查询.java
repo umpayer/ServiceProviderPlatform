@@ -37,7 +37,7 @@ public class API_3商户信息查询 extends BaseAPI {
 		try{
 			//发送post请求
 			String result = HttpUtilClient.doPostJson(queryUrl, new JSONObject(), reqMap);
-			System.out.println("输出请求结果:"+result);
+//			System.out.println("输出请求结果:"+result);
 
 			//将响应报文转成map
 			Map<String, Object> resMap = JSON.parseObject(result, TreeMap.class);

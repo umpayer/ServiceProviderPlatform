@@ -39,7 +39,11 @@ public class step1_入网相关接口用例 {
         //2.1、入网成功调用商户审核流程
         //TODO 联系联动审核该入网商户
         new API_3商户信息查询().queryOrder_商户信息查询();
+        System.out.println("3-商户审核流程开始----------start：");
         new AuditMer().auditMer();
+        System.out.println("3-商户审核流程成功----------success：");
+        System.out.println("==================================================================================");
+
 
         //3、调用入网成功配置参数
         callConfig();
@@ -54,33 +58,51 @@ public class step1_入网相关接口用例 {
      * 5、模拟调用商户审核接口
      */
     private void callMerNetIn() throws Exception {
+        System.out.println("2-商户入网流程开始----------start：");
         //商户类型：3、小微；1/2、企业/个体配置
         String merchantType = ConfigUtil.getConfig("merchantType");
 
         if ("3".equals(merchantType)) {//小微
             //1、2.1商户信息录入
+            System.out.println("2.1商户信息录入_小微商户入网开始----------start：");
             new API_1商户信息录入().add_小微商户入网();
+            System.out.println("2.1商户信息录入_小微商户入网成功----------success：");
 
             //2、2.2资质上传接口
+            System.out.println("2.2资质上传接口_小微开始----------start：");
             new API_2资质上传接口().test_小微();
+            System.out.println("2.2资质上传接口_小微成功----------success：");
 
         }else {//企业/个体配置
             //1、2.1商户信息录入
+            System.out.println("2.1商户信息录入_企业个体商户入网开始----------start：");
             new API_1商户信息录入().add_企业个体商户入网();
+            System.out.println("2.1商户信息录入_企业个体商户入网成功----------success：");
 
             //2、2.2资质上传接口
+            System.out.println("2.2资质上传接口_个体_企业商户开始----------start：");
             new API_2资质上传接口().test_个体_企业商户();
+            System.out.println("2.2资质上传接口_个体_企业商户成功----------success：");
 
         }
         Thread.sleep(1000);
         //3、2.6获取电子签约挑战码
+        System.out.println("2.3获取电子签约挑战码开始----------start：");
         new API_6_7电子签约().verifyCode_获取电子签约挑战码();
+        System.out.println("2.3获取电子签约挑战码成功----------success：");
 
         //TODO 查询签约挑战码
+        System.out.println("2.4查询签约挑战码开始----------start：");
         new VerifyCode().getVerifyCode();
-        
+        System.out.println("2.4查询签约挑战码成功----------success：");
+
         //4、2.7电子签约确认
+        System.out.println("2.5电子签约确认开始----------start：");
         new API_6_7电子签约().verifyCode_电子签约确认();
+        System.out.println("2.5电子签约确认成功----------success：");
+
+        System.out.println("2-商户入网流程成功----------success：");
+        System.out.println("==================================================================================");
     }
 
     /**
@@ -101,9 +123,10 @@ public class step1_入网相关接口用例 {
 //        new API_5微信参数配置_子商户appid().config_子商户appid();
 
         //4、2.8电子协议下载
+        System.out.println("4-电子协议下载开始----------start：");
         new API_8电子协议下载().down_电子协议下载();
-
-        System.out.println("success=========================================================");
+        System.out.println("4-电子协议下载成功----------success：");
+        System.out.println("==================================================================================");
     }
 
 }

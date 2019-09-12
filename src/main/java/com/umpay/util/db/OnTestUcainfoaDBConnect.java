@@ -12,34 +12,24 @@ import java.sql.SQLException;
  * 单例获取数据库连接
  * */
 public class OnTestUcainfoaDBConnect {
-	private static Connection conn = null;
-	
-	private OnTestUcainfoaDBConnect(){
 
-	}
-	
 //	public static final String jdbcurl="jdbc:db2://10.10.67.74:50000/upondev";
 //	public static final String user="uplatmng";
 //	public static final String pwd="uplatmng";
-	public static final String jdbcurl="jdbc:db2://10.10.67.74:50000/upondev";
-	public static final String user="ucainfoa";
-	public static final String pwd="ucainfoa";
+	private static final String jdbcurl="jdbc:db2://10.10.73.95:60000/upontest";
+	private static final String user="ucainfoa";
+	private static final String pwd="ucainfoa";
 	public static Connection getConnect(){
-		if(conn == null){
-			synchronized(OnTestUcainfoaDBConnect.class){
-				if(conn == null){
-					try {
-						Class.forName("com.ibm.db2.jcc.DB2Driver");
-						conn = DriverManager.getConnection(jdbcurl, user,pwd);
-					} catch (ClassNotFoundException e) {
-						e.printStackTrace();
-					} catch (SQLException e) {
-						e.printStackTrace();
-					}
-				}
-			}
+		Connection conn1 = null;
+		try {
+			Class.forName("com.ibm.db2.jcc.DB2Driver");
+			conn1 = DriverManager.getConnection(jdbcurl, user,pwd);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
-		return conn;
+		return conn1;
 	}
 	
 	public static Connection getDB2Connect(String jdbcurl,String user,String pwd){
@@ -65,22 +55,12 @@ public class OnTestUcainfoaDBConnect {
 		try {//首先尝试关闭结果集
 			if (rs != null)
 				rs.close();
+			if (pst != null)
+				pst.close();
+			if (conn != null)
+				conn.close();
 		} catch (SQLException sqle) {//发生异常是输出异常不处理
 			sqle.printStackTrace();
-		} finally { //在方法结束前 尝试关闭stmt
-			try {
-				if (pst != null)
-					pst.close();
-			} catch (SQLException sqle) {
-				sqle.printStackTrace();
-			} finally {//无论stmt是否关闭成功 都进行关闭数据库连接
-				try {
-					if (conn != null)
-						conn.close();
-				} catch (SQLException sqle) {
-					sqle.printStackTrace();
-				}
-			}
 		}
 	}
 }

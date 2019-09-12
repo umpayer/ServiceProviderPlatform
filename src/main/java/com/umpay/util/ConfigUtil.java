@@ -24,7 +24,7 @@ public class ConfigUtil {
 	
 	/**
 	 * 初始化
-	 * @param configPath="/config/jdbc.properties"
+	 * @param configPath
 	 * @param charSet = UTF-8|GBK
 	 */
 	
@@ -36,7 +36,7 @@ public class ConfigUtil {
 			File classpathRoot = new File(System.getProperty("user.dir"));
 			File dir = new File(classpathRoot,"");//项目所在根目录
 			String prefix = dir.getAbsolutePath() + configPath;
-			System.out.println("读取配置文件："+prefix);
+//			System.out.println("读取配置文件："+prefix);
 			ConfigUtil.configPath = prefix;
 			InputStreamReader in = new InputStreamReader(new FileInputStream(prefix),charSet);
 			props.load(in);

@@ -101,7 +101,7 @@ public class API_1商户信息录入 {
 		try{
 			//发送post请求
 			String result = HttpUtilClient.doPostJson(PATH, new JSONObject(), reqMap);
-			System.out.println("输出请求结果:"+ result.toString());
+//			System.out.println("输出请求结果:"+ result.toString());
 			Map resMap = new Gson().fromJson(result, Map.class);
 			String respCode = (String) resMap.get("respCode");
 			if ("00".equals(respCode)) {
@@ -115,7 +115,6 @@ public class API_1商户信息录入 {
 				Assert.assertTrue("小微商户入网开户失败：" + respMsg, false);
 			}
 		}catch (Exception e) {
-			e.printStackTrace();
 			Assert.assertTrue("小微商户入网开户异常", false);
 		}
 	}
@@ -200,7 +199,7 @@ public class API_1商户信息录入 {
 		try{
 			//发送post请求
 			String result = HttpUtilClient.doPostJson(PATH, new JSONObject(), reqMap);
-			System.out.println("输出请求结果:"+ result.toString());
+//			System.out.println("输出请求结果:"+ result.toString());
 			Map resMap = new Gson().fromJson(result, Map.class);
 			String respCode = (String) resMap.get("respCode");
 			if ("00".equals(respCode)) {

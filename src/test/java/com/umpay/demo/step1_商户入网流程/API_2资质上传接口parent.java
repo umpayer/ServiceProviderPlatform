@@ -266,16 +266,15 @@ public class API_2资质上传接口parent extends BaseAPI {
 				 //写入相关文件
 	            outByte.write(n);
 			}
-			System.out.println(outByte.toByteArray().length);
 			paramMap.put("funCode", "PROVIDER_PERSONMERADD");
 			paramMap.put("rpid", "JZF"+TimeUtil.datetime14());
 			paramMap.put("reqDate", TimeUtil.date8());
 			paramMap.put("reqTime", TimeUtil.time6());
-			System.out.println(desc+"请求参数："+paramMap);
+//			System.out.println(desc+"请求参数："+paramMap);
 			String bStr = Base64Utils.encodeToString(outByte.toByteArray());
 			paramMap.put("imageSource", bStr);
 			String resMSg= HttpUtilClient.doPostJson(reqUrl, null, paramMap);
-			System.out.println(desc+"响应报文"+resMSg);
+//			System.out.println(desc+"响应报文"+resMSg);
 			//执行完以上后，磁盘下的该文件才完整，大小是实际大小
 			in.close();
 			outByte.close();

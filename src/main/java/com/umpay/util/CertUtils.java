@@ -149,12 +149,8 @@ public class CertUtils {
 	 * 锟教伙拷锟斤拷锟角╋拷锟�
 	 * 
 	 * @param plain
-	 * @param merId
 	 * @return
 	 * @throws UnsupportedEncodingException
-	 * @throws SignatureException
-	 * @throws NoSuchAlgorithmException
-	 * @throws KeyException
 	 */
 	public static String sign(String plain, PrivateKey pkey) throws GeneralSecurityException,
 			UnsupportedEncodingException {
@@ -170,12 +166,8 @@ public class CertUtils {
 	 * 锟教伙拷锟斤拷锟角╋拷锟�
 	 * 
 	 * @param plain
-	 * @param merId
 	 * @return
 	 * @throws UnsupportedEncodingException
-	 * @throws SignatureException
-	 * @throws NoSuchAlgorithmException
-	 * @throws KeyException
 	 */
 	public static String sign(String plain, PrivateKey pkey,String charSet) throws GeneralSecurityException,
 			UnsupportedEncodingException {

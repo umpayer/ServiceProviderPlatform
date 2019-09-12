@@ -55,9 +55,12 @@ public class API3_3扫码支付_用户主扫 extends BaseAPI {
 			//将响应报文转成Map类型
 			Map<String, Object> treeMap = JSON.parseObject(result, TreeMap.class);
 			//提取响应结果
-			System.err.println(reqPay.get("orderType")+"生成主扫支付链接，点击支付链接开始支付："+treeMap.get("qrCode").toString());
+			System.err.println(reqPay.get("orderType")+"生成主扫支付链接，点击支付链接开始支付："+treeMap.get("qrCode"));
 			orderNo = treeMap.get("orderNo").toString();
-			transactionId = treeMap.get("transactionId").toString();
+			if(treeMap.get("transactionId") != null) {
+				transactionId = treeMap.get("transactionId").toString();
+			}
+
 			System.err.println("orderNo=" + orderNo);
 			System.err.println("transactionId=" + transactionId);
 

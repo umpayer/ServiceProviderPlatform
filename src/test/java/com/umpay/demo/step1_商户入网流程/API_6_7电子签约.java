@@ -42,7 +42,7 @@ public class API_6_7电子签约 extends BaseAPI {
 		try{
 			//发送post请求
 			String result = HttpUtilClient.doPostJson(url+"sign/getVerifyCode", new JSONObject(), reqMap);
-			System.out.println("输出请求结果:"+ result.toString());
+//			System.out.println("输出请求结果:"+ result.toString());
 
 			//将响应报文转成map
 			Map<String, Object> resMap = JSON.parseObject(result, TreeMap.class);
@@ -86,7 +86,7 @@ public class API_6_7电子签约 extends BaseAPI {
 		try{
 			//发送post请求
 			String result = HttpUtilClient.doPostJson(url+"sign/doVerifyCodeSign", new JSONObject(), reqMap);
-			System.out.println("输出请求结果:"+ result.toString());
+//			System.out.println("输出请求结果:"+ result.toString());
 
 			//将响应报文转成map
 			Map<String, Object> resMap = JSON.parseObject(result, TreeMap.class);

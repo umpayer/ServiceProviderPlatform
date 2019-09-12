@@ -37,11 +37,11 @@ public class SignTools {
 	 *            通信传入签名
 	 * @return boolean 验签结果
 	 */
-	public static boolean doCheckSign(String certFilePath, String certFileName, String signStr, String signKey) {
+	public static boolean doCheckSign(String certFilePath, String signStr, String signKey) {
 		boolean verify = true;
 		try {
 			// 从配置文件获取是否验签
-			verify = checkSign(certFilePath, certFileName, signStr, signKey);
+			verify = checkSign(certFilePath, signStr, signKey);
 		} catch (Exception e) {
 			verify = false;
 			System.out.println("验签异常！");
@@ -49,13 +49,13 @@ public class SignTools {
 		return verify;
 	}
 
-	private static boolean checkSign(String certFilePath, String certFileName, String signStr, String sign)
+	private static boolean checkSign(String certFilePath, String signStr, String sign)
 			throws Exception {
 		try {
 			System.out.println("# 开始验证签名信息...");
-			String keyFile = certFilePath + certFileName;
+			String keyFile = certFilePath;
 			System.out.println("平台公钥地址为： " + keyFile);
-			if (StringUtil.isEmpty(certFilePath) || StringUtil.isEmpty(certFileName)) {
+			if (StringUtil.isEmpty(certFilePath)) {
 				throw new Exception("获取公钥地址失败!!!");
 			}
 

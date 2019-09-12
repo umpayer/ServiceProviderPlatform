@@ -12,32 +12,22 @@ import java.sql.SQLException;
  * 单例获取数据库连接
  * */
 public class OnTestUmssfrnaDBConnect {
-	private static Connection conn = null;
-	
-	private OnTestUmssfrnaDBConnect(){
 
-	}
-	
 //	public static final String jdbcurl="jdbc:db2://10.10.67.74:50000/upondev";
 //	public static final String user="uplatmng";
 //	public static final String pwd="uplatmng";
-	public static final String jdbcurl="jdbc:db2://10.10.73.95:60000/upontest";
-	public static final String user="umssfrna";
-	public static final String pwd="umssfrna";
+	private static final String jdbcurl="jdbc:db2://10.10.73.95:60000/upontest";
+	private static final String user="umssfrna";
+	private static final String pwd="umssfrna";
 	public static Connection getConnect(){
-		if(conn == null){
-			synchronized(OnTestUmssfrnaDBConnect.class){
-				if(conn == null){
-					try {
-						Class.forName("com.ibm.db2.jcc.DB2Driver");
-						conn = DriverManager.getConnection(jdbcurl, user,pwd);
-					} catch (ClassNotFoundException e) {
-						e.printStackTrace();
-					} catch (SQLException e) {
-						e.printStackTrace();
-					}
-				}
-			}
+		Connection conn = null;
+		try {
+			Class.forName("com.ibm.db2.jcc.DB2Driver");
+			conn = DriverManager.getConnection(jdbcurl, user,pwd);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return conn;
 	}
