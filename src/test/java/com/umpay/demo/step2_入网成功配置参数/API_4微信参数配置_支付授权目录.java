@@ -41,10 +41,10 @@ public class API_4微信参数配置_支付授权目录 extends BaseAPI {
 		try{
 			//发送post请求
 			String result = Common.runJsonPost(payUrl, jsonObject1,"UTF-8");
-			System.out.println("输出请求结果:"+result);
 
 			//将响应报文转成map
 			Map<String, Object> resMap = JSON.parseObject(result, TreeMap.class);
+
 			String respCode = (String) resMap.get("respCode");
 			if ("00".equals(respCode)) {
 				Assert.assertTrue("微信参数配置_支付授权目录成功", true);

@@ -1,6 +1,7 @@
 package com.umpay.util;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.umpay.demo.step0_准备工作.EnvConfig;
 
 import java.io.IOException;
@@ -65,11 +66,8 @@ public class AddSign
         treeMap.remove("signature");
         // 【待签明文串】--去除响应签名后获取待签明文串
         StringBuilder sb = new StringBuilder();
-        for (Entry<String, Object> entry : treeMap.entrySet()) {
-            if (null != treeMap.get(entry.getKey()) && !"".equals(treeMap.get(entry.getKey()))) {
-                sb.append(treeMap.get(entry.getKey())).append("|");
-            }
-        }
+        assemSign(treeMap, sb);
+
         sb.deleteCharAt(sb.length() - 1);
         String befSgin = sb.toString();
         //【验签】
@@ -81,5 +79,20 @@ public class AddSign
         }
         //【 验签结果】
         return signresult;
+    }
+
+    private static void assemSign(Map<String, Object> treeMap, StringBuilder sb) {
+        for (String key : treeMap.keySet()) {
+            if(treeMap.get(key) instanceof JSONObject){
+                JSONObject js=(JSONObject) treeMap.get(key);
+                TreeMap<String, Object> tmap = JSON.parseObject(js.toJSONString(), TreeMap.class);
+                assemSign(tmap, sb);
+            }else {
+                if(null != treeMap.get(key) && !"".equals(treeMap.get(key))){
+                    sb.append(treeMap.get(key)).append("|");
+                }
+
+            }
+        }
     }
 }
