@@ -18,7 +18,8 @@ import com.umpay.util.HttpUtilClient;
  */
 public class AuditMer {
 
-    public String queryUrl ="http://10.10.178.87:7807/joinflow/JoinFlow";
+    public String queryUrl = EnvConfig.url + "test/auditMer";
+
     private static String acqMerId = (String) EnvConfig.context.get("acqMerId");
 
     @SuppressWarnings("unchecked")
@@ -37,13 +38,13 @@ public class AuditMer {
         reqPay.put("userName", "");
 
         //对请求报文做加签处理
-        String reqpay = AddSign.addSign(reqPay);
-        Map<String, Object> reqMap = JSONObject.parseObject(reqpay);
+//        String reqpay = AddSign.addSign(reqPay);
+//        Map<String, Object> reqMap = JSONObject.parseObject(reqpay);
 
         try{
             //发送post请求
-            String result = HttpUtilClient.doPostJson(queryUrl, new JSONObject(), reqMap);
-//            System.out.println("输出请求结果:"+result);
+            String result = HttpUtilClient.doPostJson(queryUrl, new JSONObject(), reqPay);
+            System.out.println("输出请求结果:"+result);
 
             //将响应报文转成map
             Map<String, Object> resMap = JSON.parseObject(result, TreeMap.class);

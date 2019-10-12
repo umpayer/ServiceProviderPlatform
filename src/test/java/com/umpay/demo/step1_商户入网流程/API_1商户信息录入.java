@@ -77,6 +77,7 @@ public class API_1商户信息录入 {
 		reqPaper.put("signName", "王贝贝");
 		reqPaper.put("settleIdEffective", "20140101");
 		reqPaper.put("settleIdExpired", "永久");
+		reqPaper.put("signType", "1");
 		//rate
 		reqRate.put("feeRateAlipay", "0.51");//支付宝费率	
 		reqRate.put("feeRateWechatpay", "0.52");//微信费率	
@@ -175,6 +176,7 @@ public class API_1商户信息录入 {
 		reqPaper.put("settleIdExpired", "永久");
 		reqPaper.put("certNoEffective", "20140101");
 		reqPaper.put("certNoExpired", "永久");
+		reqPaper.put("signType", "1");
 		//rate
 		reqRate.put("feeRateAlipay", "0.51");//支付宝费率	
 		reqRate.put("feeRateWechatpay", "0.52");//微信费率	

@@ -15,19 +15,19 @@ import java.util.TreeMap;
  * Hello world!
  *
  */
-public class AddSign 
+public class AddSign
 {
-	public static String privateKey = EnvConfig.privateKey;	//商户私钥
+    public static String privateKey = EnvConfig.privateKey;	//商户私钥
 
-	public static String certFilePath = EnvConfig.serverCert;	//联动证书
+    public static String certFilePath = EnvConfig.serverCert;	//联动证书
 
-    public static void main( String[] args ) 
+    public static void main( String[] args )
     {
-    	String aa ="{\"respCode\":\"00\",\"respMsg\":\"处理成功\",\"signature\":\"JZHqglo7/ovc2LgRlsosYGnUSwyVu1ApUsQFgstuXxLNwqpdsDRqTSFoA0mnFqS4m+5pFdjn1ujSCuo2sWit3jVTf12hDUDD2aQvgfVByzPDNWJNY6iPUi432+i9MI3R6/QGxlTlNBl0MbwiVMkjYQJhu+pwBjkXXDU45u6N7xo=\",\"platDate\":\"20190806144534\",\"orderNo\":\"JD201908060244020001\",\"transactionId\":\"2019080614450000000082\",\"txnAmt\":\"1\",\"qrCode\":\"https://qr.alipay.com/bax00501hslllkvqqha060d5\"}";
-    	boolean ss =doCheckSign(aa);
-    	System.out.println(ss);
+        String aa ="{\"respCode\":\"00\",\"respMsg\":\"处理成功\",\"signature\":\"rhQeeSpv9E80c3FS0etJDdN/WlPwtSJUXXSp1m1brNbnyik0xJqp9eJKo8doVOlgxkKpS2ent2s+s9y2WhPud51QUMld8SESOvF0vgb2k/HarO6BbZSt2Cl+/4T5L6lNvcPTeUMlBq2vZ4b58tPzrsoeDohiaX4ku/+a7XEBN1k=\",\"platDate\":\"20191008102237\",\"orderNo\":\"20191008102235\",\"transactionId\":\"2019100810220000072703\",\"txnAmt\":\"1\",\"qrCode\":\"https://qr.alipay.com/bax07439jyn80w0qn73f80c0\"}";
+        boolean ss =doCheckSign(aa);
+        System.out.println(ss);
     }
-    
+
     /**
      * 加签
      * @param reqMap
@@ -42,24 +42,24 @@ public class AddSign
         String signStr    = new StringBuilder(reqMap.toString().replace(", ", "&").replace("{", "").replace("}", "")).toString();//【待签名明文串】--signStr
 //        System.out.println("待签名明文串:" + signStr);
         // 验签
-        
+
         String sign = CertUtils.sign(signStr, CertUtils.getPrivateKey(privateKey),"UTF-8");//【签名密文串】--sign
 //        System.out.println("签名密文串:" + sign);
-        
+
         reqMap.put("signature", sign);
         //【最终报文串】--res
         String res=JSON.toJSONString(reqMap);
 //        System.out.println("最终报文串："+ res);
         return res;
     }
-    
+
     /**
      * 验签
      * @param object
      * @return
      */
     @SuppressWarnings("unchecked")
-	public static boolean doCheckSign(String object) {
+    public static boolean doCheckSign(String object) {
         Map<String, Object> treeMap = JSON.parseObject(JSON.toJSONString(JSON.parse(object)), TreeMap.class);
         // 【响应的签名】
         String signKey = (String) treeMap.get("signature");
