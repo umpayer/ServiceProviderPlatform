@@ -59,7 +59,7 @@ public class Common {
 		HttpPost post = new HttpPost(url);
 		String response = null;
 		try {
-			StringEntity s = new StringEntity(jsonObject.toString());
+			StringEntity s = new StringEntity(jsonObject.toString(),encoding);
 			s.setContentEncoding(encoding);
 			s.setContentType("application/json");// 发送json数据需要设置contentType
 			post.setEntity(s);
