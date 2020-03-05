@@ -13,12 +13,9 @@ import java.sql.SQLException;
  * */
 public class OnTestUmssfrnaDBConnect {
 
-//	public static final String jdbcurl="jdbc:db2://10.10.67.74:50000/upondev";
-//	public static final String user="uplatmng";
-//	public static final String pwd="uplatmng";
-	private static final String jdbcurl="jdbc:db2://10.10.73.95:60000/upontest";
-	private static final String user="umssfrna";
-	private static final String pwd="umssfrna";
+	private static final String jdbcurl="jdbc:db2://xx.xx.xx.xx:xxxxx/upontest";
+	private static final String user="xxxxxxxx";
+	private static final String pwd="xxxxxxxx";
 	public static Connection getConnect(){
 		Connection conn = null;
 		try {
