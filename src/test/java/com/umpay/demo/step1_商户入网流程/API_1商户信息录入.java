@@ -67,7 +67,7 @@ public class API_1商户信息录入 {
 		reqPaper.put("settleAccount", "王贝贝");//结算户名	256	Y 吕倩
 		reqPaper.put("settlePeriod", "2");//结算周期	1	Y	1:T1 2:D0 3:T0 4:D1
 		reqPaper.put("settleIdNo", "412701198707292019");//身份证号	18	Y	 513436200008027310
-		reqPaper.put("openBank", "南京银行");//开户银行名称	4	Y	参见附件二
+		reqPaper.put("openBank", "B004");//开户银行名称	4	Y	参见附件二
 		reqPaper.put("openSubBank", "北京银行");//开户支行名称	64	Y
 		
 		reqPaper.put("webSite", "http://www.wang163.com");
