@@ -52,9 +52,7 @@ public class API_2资质上传接口 extends API_2资质上传接口parent {
 			test_signAuthLetterPhoto(paramMap);
 			System.out.println("2.2.6资质上传接口_小微:签约授权书上传成功！");
 
-			//7、法人手持身份证
-			test_idCardHandle(paramMap);
-			System.out.println("2.2.7资质上传接口_个体_企业商户:法人手持身份证上传成功！");
+
 
 			//门店门头照
 			test_storeHeadPhoto(paramMap);
@@ -115,9 +113,7 @@ public class API_2资质上传接口 extends API_2资质上传接口parent {
 			test_businessLicensePhoto(paramMap);
 			System.out.println("2.2.6资质上传接口_个体_企业商户:营业执照照片上传成功！");
 
-			//7、法人手持身份证
-			test_idCardHandle(paramMap);
-			System.out.println("2.2.7资质上传接口_个体_企业商户:法人手持身份证上传成功！");
+
 		}catch (Exception e) {
 			Assert.assertTrue(e.getMessage(), false);
 		}
