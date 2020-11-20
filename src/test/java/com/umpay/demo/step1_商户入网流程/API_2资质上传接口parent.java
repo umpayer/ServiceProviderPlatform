@@ -32,7 +32,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	 */
 	public void test_idCardFront(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//idCardFront.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "idCardFront");
 		paramMap.put("imageName", "idCard_front.jpg");
 		String resCode = sendData("身份证正面上传",filePath,"/upload/qualification",paramMap);
@@ -48,7 +47,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	 */
 	public void test_idCardBack(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//idCardBack.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "idCardBack");
 		paramMap.put("imageName", "idCard_back.jpg");
 		String resCode = sendData("身份证背面上传",filePath,"/upload/qualification",paramMap);
@@ -65,7 +63,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	
 	public void test_idCardHandle(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//idCardHandle.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "idCardHandle");
 		paramMap.put("imageName", "idCardHandle.jpg");
 		String resCode = sendData("法人手持身份证上传",filePath,"/upload/qualification",paramMap);
@@ -82,7 +79,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	
 	public void test_bankCardPhotoFront(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//bankCardPhotoFront.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "bankCardPhotoFront");
 		paramMap.put("imageName", "bankCardPhotoFront.jpg");
 		String resCode = sendData("银行卡正面上传",filePath,"/upload/qualification",paramMap);
@@ -99,7 +95,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	
 	public void test_bankCardPhotoBack(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//bankCardPhotoBack.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "bankCardPhotoBack");
 		paramMap.put("imageName", "bankCardPhotoBack.jpg");
 		String resCode = sendData("银行卡背面上传",filePath,"/upload/qualification",paramMap);
@@ -116,7 +111,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	
 	public void test_openingLicenseAccountPhoto(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//openingLicenseAccountPhoto.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "openingLicenseAccountPhoto");
 		paramMap.put("imageName", "openingLicenseAccountPhoto.jpg");
 		String resCode = sendData("开户许可证上传",filePath,"/upload/qualification",paramMap);
@@ -133,7 +127,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	
 	public void test_acquiringAgreementPhoto(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//acquiringAgreementPhoto.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "acquiringAgreementPhoto");
 		paramMap.put("imageName", "acquiringAgreementPhoto.jpg");
 		String resCode = sendData("商户收单协议照片上传",filePath,"/upload/qualification",paramMap);
@@ -150,7 +143,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	
 	public void test_signAuthLetterPhoto(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//signAuthLetterPhoto.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "signAuthLetterPhoto");
 		paramMap.put("imageName", "signAuthLetterPhoto.jpg");
 		String resCode = sendData("签约授权书上传",filePath,"/upload/qualification",paramMap);
@@ -167,7 +159,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	
 	public void test_businessLicensePhoto(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//businessLicensePhoto.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "businessLicensePhoto");
 		paramMap.put("imageName", "businessLicensePhoto.jpg");
 		String resCode = sendData("营业执照照片上传",filePath,"/upload/qualification",paramMap);
@@ -184,7 +175,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	
 	public void test_storeHeadPhoto(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//storeHeadPhoto.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "storeHeadPhoto");
 		paramMap.put("imageName", "storeHeadPhoto.jpg");
 		String resCode = sendData("门店门头照上传",filePath,"/upload/qualification",paramMap);
@@ -201,7 +191,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	
 	public void test_storeShopPhoto(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//storeShopPhoto.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "storeShopPhoto");
 		paramMap.put("imageName", "storeShopPhoto.jpg");
 		String resCode = sendData("门店外景照上传",filePath,"/upload/qualification",paramMap);
@@ -218,7 +207,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	
 	public void test_storeHallPhoto(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//storeHallPhoto.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "storeHallPhoto");
 		paramMap.put("imageName", "storeHallPhoto.jpg");
 		String resCode = sendData("门店内景照上传",filePath,"/upload/qualification",paramMap);
@@ -235,7 +223,6 @@ public class API_2资质上传接口parent extends BaseAPI {
 	
 	public void test_storeCashierPhoto(Map<String, Object> paramMap) throws Exception {
 		String filePath = filePath_资质 + "//storeCashierPhoto.jpg";
-		paramMap.put("idNumber", "412701198707292019");
 		paramMap.put("imageType", "storeCashierPhoto");
 		paramMap.put("imageName", "storeCashierPhoto.jpg");
 		String resCode = sendData("门店收银台照上传",filePath,"/upload/qualification",paramMap);
